@@ -27,7 +27,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseStaticFiles();
-
+app.UseCors("CorsPolicy");
 app.UseAuthorization();
 //knowns where to map the http requests to correct controllers
 app.MapControllers();
