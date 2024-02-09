@@ -75,7 +75,7 @@ namespace API.Controllers
 
 //methods to return the types
          [HttpGet("types")]
-        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes()
         {
             //because it is and IReadOnlyList
             return Ok(await _productTypeRepo.ListAllAsync());
