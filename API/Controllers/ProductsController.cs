@@ -30,6 +30,7 @@ namespace API.Controllers
         }
 
         //async is used to handel mulitple http requests 
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             [FromQuery]ProductSpecParams productParams)
@@ -50,6 +51,7 @@ namespace API.Controllers
         }
 
 //passing an id as a route parameter to get a single product
+        [Cached(600)]
         [HttpGet("{id}")]
         //responses to errors that can occur
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -66,6 +68,7 @@ namespace API.Controllers
         }
 
 //methods to return the brands
+        [Cached(600)]
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
@@ -74,6 +77,7 @@ namespace API.Controllers
         }
 
 //methods to return the types
+        [Cached(600)]
          [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes()
         {
