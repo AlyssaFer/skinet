@@ -21,11 +21,7 @@ namespace API.Extensions
             //connection string - to do code first migration
             services.AddDbContext<StoreContext>(opt =>
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
-            });
-            services.AddDbContext<AppIdentityDbContext>(x =>
-            {
-                x.UseSqlite(config.GetConnectionString("IdentityConnection"));
+                opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
